@@ -77,7 +77,7 @@ get the endpoint's current value AND subscribe to updates for the next hour:
       if ( expires > new Date ) return listener
     })
 
-create an endpoint's getter and callback with its setter:
+create an endpoint's getter, and call back with its setter:
 
     var get = pbsb( function( set ) {
       // protip: for best results, chain endpoints by
