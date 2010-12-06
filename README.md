@@ -20,19 +20,19 @@ a pbsb endpoint consists of:
 
 ## features
 
-- simple: pbsb unifies the getting/setting and publish/subscribe paradigms into one asynchronous function.
+- *simple*: pbsb unifies the getting/setting and publish/subscribe paradigms into one asynchronous function.
 
-- tiny: currently only 210 closure'd bytes, pbsb is suitable for use as an embeddable building block in larger pub/sub implementations.
+- *tiny*: currently only 210 closure'd bytes, pbsb is suitable for use as an embeddable building block in larger pub/sub implementations.
 
-- functional: `get` and `set` are functions, not methods, which means they can be passed into other callback chains without binding.
+- *functional*: `get` and `set` are functions, not methods, which means they can be passed into other callback chains without binding.
 
-- clean: pbsb's API facilitates the creation of endpoints that automatically subscribe to other endpoints, to keep logic cleanly separated.
+- *clean*: pbsb's API facilitates the creation of endpoints that automatically subscribe to other endpoints, to keep logic cleanly separated.
 
-- terse: subscribers can return a function upon callback to renew their subscription, avoiding awkward `unbind`/`unsubscribe` methods.
+- *terse*: subscribers can return a function upon callback to renew their subscription, avoiding awkward `unbind`/`unsubscribe` methods.
 
-- optionally sweet: when called without an upstream setter, pbsb returns a single function that infers getting/setting by argument type.
+- *optionally sweet*: when called without an upstream setter, pbsb returns a single function that infers getting/setting by argument type.
 
-- sync-compatible: initial subscriber callbacks are async but blocking, so an endpoint's current value can be obtained without leaving the current context.
+- *sync enough*: initial subscriber callbacks are async but blocking, so an endpoint's current value can be obtained without leaving the current context.
 
 ## API
 
