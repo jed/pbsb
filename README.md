@@ -4,10 +4,10 @@ pbsb is a tiny javascript function that elegantly merges two common ideas in jav
 
 ## overview
 
-    var endpoint = new pbsb       // create
+    var endpoint = new pbsb     // create
     
-    endpoint.set( value )       // set/publish
-    endpoint.get( callback )    // get/subscribe
+    endpoint.set( value )       // set (publish)
+    endpoint.get( callback )    // get (subscribe)
     endpoint( valueOrCallback ) // infer get/set by argument
 
 ## description
@@ -42,7 +42,7 @@ create an endpoint:
 
 create an endpoint with an initial value:
 
-    var endpoint = pbsb( value )    // if typeof val != "function"
+    var endpoint = pbsb( value )    // if value is not a function
 
 set the endpoint's value:
 
@@ -59,8 +59,8 @@ let pbsb figure out if you want to get or set:
     var log = function( x ){ console.log( x ) }
     var val = "this is not a function"
 
-    endpoint( val ) // typeof val != "function", so endpoint.set( val )
-    endpoint( log ) // typeof val == "function", so endpoint.get( val )
+    endpoint( val ) // val is not a function, so endpoint.set( val )
+    endpoint( log ) // log is a function, so endpoint.get( log )
     
 get the endpoint's current value AND subscribe to updates:
 
